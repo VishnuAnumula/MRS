@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recommendations</title>
+
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        body{
+            background-image: url("../static/images/ReccoBg.jpg");
+        }
+        
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+    </style>
+</head>
+
+<body align="center">
+    <br/>
+    <h1 align="center" style="color: rgb(6, 77, 82)"><b>Recommendations</b></h1>
+    <table class="styled-table" style ="width:40%" align="center">
+    <tr>
+    <th></th>
+    <th style="color: rgb(110, 112, 120)">Title</th>
+    <th style="color: rgb(110, 112, 120)">Rating</th>
+    </tr>
+    {% for i in result %}
+    <tr>
+        <td><img src={{i.link}} </td>
+        <td style="color: indigo">{{i.name}}</td>
+        <td>⭐{{i.rating}}</td>
+    </tr>
+    {% endfor %}
+
+</body>
+
+</html>

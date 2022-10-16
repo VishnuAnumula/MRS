@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <title>Movie Recommedation System</title>
+      <link rel="stylesheet" href="../static/styles/style.css">
+   </head>
+
+   <body onload="slider()">
+      <div class="banner">
+         <div class="slider">
+            <img src="../static/images/Img1.jpg" id="slideImg" >
+         </div>
+      </div>
+      <div class="content">
+         <h1>Movie Recommendation Site</h1>
+
+         <form action="add" method="POST"><br/>
+            {% csrf_token %}
+            <input type="text" name="num1" placeholder="Enter a Movie of your preference...">
+            <button type ="submit" onclick="return val()">Search Movies</button>
+         </form>
+
+         <p>Confused which movie to see? Don't worry, we got you covered!</p>
+      </div>
+      <script>
+         var slideImg = document.getElementById("slideImg");
+         var images = new Array(
+            "../static/images/Img1.jpg",
+            "../static/images/Img2.jpg",
+            "../static/images/Img3.jpg",
+            "../static/images/Img4.jpg",
+            "../static/images/Img5.jpg"
+
+            );
+         var len = images.length;
+         var i=0;
+         function slider(){
+         if( i > len-1){
+            i=0;
+            }
+         slideImg.src = images[i];
+         i++;
+         setTimeout('slider()',4000);
+
+         }
+      </script>
+   </body>
+
+</html>  
